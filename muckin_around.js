@@ -14,8 +14,9 @@ network.on('transactionInv', function(data){
     totals[hex] = [ip]
   }
   logfmt.log({
-    'tx':      hex,
-    'nodes':   totals[hex].length,
+    'tx':              hex,
+    'nodes':           totals[hex].length,
+    'total_nodes':     peers,
     'percent_of_nodes': Math.round((totals[hex].length / peers) * 100) + '%'
   })
 })
